@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="منصة العقارات الذكية في اليمن لعرض وشراء واستئجار العقارات">
+
+    <meta name="keywords"
+          content="عقارات اليمن, شقق, فلل, أراضي, إيجار, بيع عقارات">
+
+    <meta name="author"
+          content="منصة العقارات الذكية في اليمن">
+
+    <title>العقارات الذكية في اليمن</title>
+
+
+    <style>
+
+        /* ==============================
+           إعدادات عامة
+           ============================== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Tahoma, Arial, sans-serif;
+            background-color: #f4f7fa;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+
+        /* ==============================
+           HEADER - رأس الصفحة
+           ============================== */
+
+        header {
+            background: linear-gradient(135deg, #12355b, #1976a8);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            color: #e5f4ff;
+        }
+
+
+        /* ==============================
+           NAV - قائمة التنقل
+           ============================== */
+
+        nav {
+            background-color: #0b2239;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 18px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #1976a8;
+        }
+
+
+        /* ==============================
+           MAIN - المحتوى الرئيسي
+           ============================== */
+
+        main {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+
+        /* ==============================
+           SECTION - الأقسام
+           ============================== */
+
+        section {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #ddd;
+        }
+
+        section h2 {
+            color: #12355b;
+            border-bottom: 3px solid #4fc3f7;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+
+        /* ==============================
+           ARTICLE - المقالات
+           ============================== */
+
+        article {
+            background-color: #f8fafc;
+            padding: 20px;
+            margin: 15px 0;
+            border-right: 5px solid #1976a8;
+            border-radius: 7px;
+        }
+
+        article h3 {
+            color: #1976a8;
+            margin-bottom: 10px;
+        }
+
+
+        /* ==============================
+           BUTTON - الأزرار
+           ============================== */
+
+        .btn {
+            display: inline-block;
+            background-color: #1976a8;
+            color: white;
+            text-decoration: none;
+            padding: 10px 25px;
+            margin-top: 15px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #12355b;
+            transform: translateY(-2px);
+        }
+
+
+        /* ==============================
+           IMAGE - الصورة الرئيسية
+           ============================== */
+
+        .main-image {
+            display: block;
+            width: 500px;
+            margin: 25px auto;
+            border-radius: 12px;
+        }
+
+
+        /* ==============================
+           GALLERY - ألبوم الصور
+           ============================== */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery figure {
+            background-color: #f8fafc;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 8px #ddd;
+            transition: 0.3s;
+        }
+
+        .gallery figure:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        figcaption {
+            padding: 10px;
+            font-weight: bold;
+            color: #12355b;
+        }
+
+
+        /* ==============================
+           CARDS - البطاقات
+           ============================== */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #eef7fc;
+            padding: 25px;
+            text-align: center;
+            border-radius: 10px;
+            border-top: 5px solid #1976a8;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px #ccc;
+        }
+
+        .card h3 {
+            color: #12355b;
+            margin-bottom: 10px;
+        }
+
+
+        /* ==============================
+           LIST - القوائم
+           ============================== */
+
+        ul,
+        ol {
+            margin: 15px 35px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+
+        /* ==============================
+           TABLE - الجدول
+           ============================== */
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #12355b;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+
+        /* ==============================
+           VIDEO - الفيديو
+           ============================== */
+
+        video {
+            display: block;
+            width: 100%;
+            max-width: 200px;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+
+
+        /* ==============================
+           ASIDE - المحتوى الجانبي
+           ============================== */
+
+        aside {
+            background-color: #e5f5ff;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-right: 5px solid #2196f3;
+            border-radius: 8px;
+        }
+
+        aside h3 {
+            color: #12355b;
+            margin-bottom: 8px;
+        }
+
+
+        /* ==============================
+           FAQ - الأسئلة الشائعة
+           ============================== */
+
+        details {
+            background-color: #f8fafc;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #12355b;
+        }
+
+
+        /* ==============================
+           FORM - نموذج التواصل
+           ============================== */
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-family: inherit;
+        }
+
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        button {
+            background-color: #12355b;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            margin-top: 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #1976a8;
+        }
+
+
+        /* ==============================
+           FOOTER - تذييل الصفحة
+           ============================== */
+
+        footer {
+            background-color: #0b2239;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        footer a {
+            color: #4fc3f7;
+            text-decoration: none;
+        }
+
+
+        /* ==============================
+           RESPONSIVE DESIGN
+           ============================== */
+
+        @media (max-width: 768px) {
+
+            header h1 {
+                font-size: 26px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            nav {
+                display: block;
+                text-align: center;
+            }
+
+            nav a {
+                display: block;
+                margin: 5px;
+            }
+
+            main {
+                width: 95%;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==============================
+         HEADER
+         ============================== -->
+
+    <header>
+
+        <h1>منصة العقارات الذكية في اليمن</h1>
+
+        <p>
+            منصة إلكترونية لعرض وشراء واستئجار العقارات بسهولة
+        </p>
+
+    </header>
+
+
+    <!-- ==============================
+         NAVIGATION
+         ============================== -->
+
+    <nav>
+
+        <a href="#home">الرئيسية</a>
+
+        <a href="#about">عن المنصة</a>
+
+        <a href="#services">الخدمات</a>
+
+        <a href="#gallery">العقارات</a>
+
+        <a href="#articles">المقالات</a>
+
+        <a href="#video">الفيديو</a>
+
+        <a href="#contact">اتصل بنا</a>
+
+    </nav>
+
+
+    <!-- ==============================
+         MAIN
+         ============================== -->
+
+    <main>
+
+
+        <!-- ==============================
+             القسم الأول: الرئيسية
+             ============================== -->
+
+        <section id="home">
+
+            <h2>مرحبًا بكم في منصة العقارات الذكية</h2>
+
+            <p>
+                منصة العقارات الذكية في اليمن هي فكرة لموقع إلكتروني
+                يساعد المستخدمين على البحث عن العقارات المناسبة
+                للشراء أو الاستئجار.
+            </p>
+
+            <p>
+                تهدف المنصة إلى تسهيل الوصول إلى العقارات وتنظيم
+                المعلومات الخاصة بها بطريقة سهلة وواضحة.
+            </p>
+
+            <a href="#services" class="btn">
+                استكشف خدماتنا
+            </a>
+
+        </section>
+
+
+        <!-- ==============================
+             القسم الثاني: عن المنصة
+             ============================== -->
+
+        <section id="about">
+
+            <h2>عن منصة العقارات الذكية</h2>
+
+            <article>
+
+                <h3>ما هي المنصة؟</h3>
+
+                <p>
+                    منصة العقارات الذكية هي موقع إلكتروني يعرض
+                    مجموعة من العقارات المتاحة في اليمن، مثل
+                    الشقق والفلل والأراضي والمكاتب.
+                </p>
+
+                <img
+                    src="images/realestate.jpg"
+                    alt="صورة عقار"
+                    class="main-image">
+
+            </article>
+
+        </section>
+
+
+        <!-- ==============================
+             القسم الثالث: الخدمات
+             ============================== -->
+
+        <section id="services">
+
+            <h2>خدمات المنصة</h2>
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <h3>بيع العقارات</h3>
+
+                    <p>
+                        عرض العقارات المتاحة للبيع مع معلوماتها
+                        الأساسية.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>إيجار العقارات</h3>
+
+                    <p>
+                        البحث عن الشقق والمنازل والمكاتب المتاحة
+                        للإيجار.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>البحث عن العقار</h3>
+
+                    <p>
+                        مساعدة المستخدم في الوصول إلى العقار
+                        المناسب حسب احتياجه.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             القسم الرابع: مميزات المنصة
+             ============================== -->
+
+        <section>
+
+            <h2>مميزات منصة العقارات الذكية</h2>
+
+            <ul>
+
+                <li>
+                    سهولة البحث عن العقارات.
+                </li>
+
+                <li>
+                    عرض صور العقار ومعلوماته.
+                </li>
+
+                <li>
+                    إمكانية مقارنة العقارات.
+                </li>
+
+                <li>
+                    تنظيم العقارات حسب النوع.
+                </li>
+
+                <li>
+                    توفير معلومات التواصل مع المعلن.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- ==============================
+             القسم الخامس: ألبوم العقارات
+             ============================== -->
+
+        <section id="gallery">
+
+            <h2>ألبوم العقارات</h2>
+
+            <p>
+                يحتوي الموقع على مجموعة من الصور التي توضح
+                أنواع العقارات المختلفة.
+            </p>
+
+
+            <div class="gallery">
+
+
+                <figure>
+
+                    <img
+                        src="images/house1.jpg"
+                        alt="منزل">
+
+                    <figcaption>
+                        منزل سكني
+                    </figcaption>
+
+                </figure>
+
+
+                <figure>
+
+                    <img
+                        src="images/house2.jpg"
+                        alt="شقة">
+
+                    <figcaption>
+                        شقة سكنية
+                    </figcaption>
+
+                </figure>
+
+
+                <figure>
+
+                    <img
+                        src="images/house3.jpg"
+                        alt="فيلا">
+
+                    <figcaption>
+                        فيلا
+                    </figcaption>
+
+                </figure>
+
+
+                <figure>
+
+                    <img
+                        src="images/house4.jpg"
+                        alt="أرض">
+
+                    <figcaption>
+                        أرض للبيع
+                    </figcaption>
+
+                </figure>
+
+
+                <figure>
+
+                    <img
+                        src="images/house5.jpg"
+                        alt="مكتب">
+
+                    <figcaption>
+                        مكتب تجاري
+                    </figcaption>
+
+                </figure>
+
+
+                <figure>
+
+                    <img
+                        src="images/house6.jpg"
+                        alt="عقار تجاري">
+
+                    <figcaption>
+                        عقار تجاري
+                    </figcaption>
+
+                </figure>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ==============================
+             القسم السادس: المقالات
+             ============================== -->
+
+        <section id="articles">
+
+            <h2>مقالات عقارية</h2>
+
+
+            <article>
+
+                <h3>أهمية البحث عن العقار المناسب</h3>
+
+                <p>
+                    يساعد البحث المنظم عن العقارات المستخدم
+                    على معرفة الخيارات المتاحة ومقارنتها
+                    قبل اتخاذ قرار الشراء أو الاستئجار.
+                </p>
+
+            </article>
+
+
+            <article>
+
+                <h3>نصائح عند شراء العقار</h3>
+
+                <p>
+                    يجب التأكد من معلومات العقار وموقعه ومساحته
+                    وحالته قبل إتمام عملية الشراء.
+                </p>
+
+            </article>
+
+
+            <article>
+
+                <h3>أهمية المواقع العقارية</h3>
+
+                <p>
+                    تساعد المواقع العقارية في تسهيل الوصول إلى
+                    العقارات وتوفير المعلومات للمستخدمين بطريقة
+                    منظمة.
+                </p>
+
+            </article>
+
+        </section>
+
+
+        <!-- ==============================
+             القسم السابع: الفيديو
+             ============================== -->
+
+        <section id="video">
+
+            <h2>فيديو تعريفي</h2>
+
+            <video controls> 
+
+                <source
+                    src="images/realestate.mp4"
+                    type="video/mp4">
+
+                المتصفح لا يدعم تشغيل الفيديو.
+
+            </video>
+
+        </section>
+
+
+        <!-- ==============================
+             القسم الثامن: جدول العقارات
+             ============================== -->
+
+        <section>
+
+            <h2>مقارنة بين أنواع العقارات</h2>
+
+            <table>
+
+                <tr>
+
+                    <th>نوع العقار</th>
+
+                    <th>الاستخدام</th>
+
+                    <th>الحالة</th>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        شقة
+                    </td>
+
+                    <td>
+                        سكن
+                    </td>
+
+                    <td>
+                        للبيع أو الإيجار
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        فيلا
+                    </td>
+
+                    <td>
+                        سكن عائلي
+                    </td>
+
+                    <td>
+                        للبيع أو الإيجار
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        أرض
+                    </td>
+
+                    <td>
+                        بناء واستثمار
+                    </td>
+
+                    <td>
+                        للبيع
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        مكتب
+                    </td>
+
+                    <td>
+                        نشاط تجاري
+                    </td>
+
+                    <td>
+                        للبيع أو الإيجار
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </section>
+
+
+        <!-- ==============================
+             القسم التاسع: خطوات البحث
+             ============================== -->
+
+        <section>
+
+            <h2>خطوات البحث عن عقار</h2>
+
+            <ol>
+
+                <li>
+                    تحديد نوع العقار المطلوب.
+                </li>
+
+                <li>
+                    تحديد المدينة أو المنطقة.
+                </li>
+
+                <li>
+                    تحديد الغرض من العقار.
+                </li>
+
+                <li>
+                    الاطلاع على معلومات العقار.
+                </li>
+
+                <li>
+                    مشاهدة صور العقار.
+                </li>
+
+                <li>
+                    مقارنة العقار مع الخيارات الأخرى.
+                </li>
+
+                <li>
+                    التواصل مع المعلن.
+                </li>
+
+            </ol>
+
+        </section>
+
+
+        <!-- ==============================
+             ASIDE
+             ============================== -->
+
+        <aside>
+
+            <h3>معلومة مهمة</h3>
+
+            <p>
+                تساعد المنصات العقارية الإلكترونية في تنظيم
+                معلومات العقارات وتسهيل عملية البحث والوصول
+                إلى الخيارات المتاحة.
+            </p>
+
+        </aside>
+
+
+        <!-- ==============================
+             الأسئلة الشائعة
+             ============================== -->
+
+        <section>
+
+            <h2>الأسئلة الشائعة</h2>
+
+
+            <details>
+
+                <summary>
+                    ما هي منصة العقارات الذكية؟
+                </summary>
+
+                <p>
+                    هي منصة إلكترونية تهدف إلى عرض العقارات
+                    وتنظيم معلوماتها وتسهيل البحث عنها.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    ما أنواع العقارات الموجودة في المنصة؟
+                </summary>
+
+                <p>
+                    يمكن أن تشمل المنصة الشقق والفلل والأراضي
+                    والمكاتب والعقارات التجارية.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    هل يمكن البحث عن عقار للإيجار؟
+                </summary>
+
+                <p>
+                    نعم، يمكن تخصيص المنصة لعرض العقارات
+                    المتاحة للبيع أو الإيجار.
+                </p>
+
+            </details>
+
+
+        </section>
+
+
+        <!-- ==============================
+             نموذج الاتصال
+             ============================== -->
+
+        <section id="contact">
+
+            <h2>تواصل معنا</h2>
+
+            <form>
+
+                <label for="name">
+                    الاسم
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="أدخل اسمك">
+
+
+                <label for="email">
+                    البريد الإلكتروني
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="example@email.com">
+
+
+                <label for="topic">
+                    نوع الطلب
+                </label>
+
+                <select id="topic" name="topic">
+
+                    <option>
+                        شراء عقار
+                    </option>
+
+                    <option>
+                        استئجار عقار
+                    </option>
+
+                    <option>
+                        عرض عقار للبيع
+                    </option>
+
+                    <option>
+                        عرض عقار للإيجار
+                    </option>
+
+                </select>
+
+
+                <label for="message">
+                    الرسالة
+                </label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    placeholder="اكتب رسالتك هنا"></textarea>
+
+
+                <button type="submit">
+                    إرسال الطلب
+                </button>
+
+            </form>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ==============================
+         FOOTER
+         ============================== -->
+
+    <footer>
+
+        <h3>
+            منصة العقارات الذكية في اليمن
+        </h3>
+
+        <p>
+            منصة إلكترونية للعقارات
+        </p>
+
+        <p>
+            جميع الحقوق محفوظة © 2026
+        </p>
+
+        <p>
+
+            <a href="#home">
+                العودة إلى أعلى الصفحة
+            </a>
+
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
